@@ -1,6 +1,8 @@
 const express = require('express');
 const ytdl = require('@distube/youtube-dl')
 const app = express();
+const http = require('http')
+const hostname = '127.0.0.1';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +34,7 @@ app.post('/instagram', (req, res) => {
                         quality: reso
                     })
                 })
-               return res.status(200).send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     video: videoReq
@@ -41,7 +43,7 @@ app.post('/instagram', (req, res) => {
                 return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-       return res.status(400).send({ error: error })
+        return res.status(400).send({ error: error })
     }
 })
 
@@ -240,7 +242,7 @@ app.post('/vimeo', (req, res) => {
                         // format: format
                     })
                 })
-               return res.status(200).send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     videos: formatReq
@@ -249,10 +251,10 @@ app.post('/vimeo', (req, res) => {
                 return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-       return res.status(400).send({ error: error })
+        return res.status(400).send({ error: error })
     }
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
-})
+app.listen(PORT, hostname, () => {
+    console.log(`Server running at http://${hostname}:${PORT}/`);
+});
