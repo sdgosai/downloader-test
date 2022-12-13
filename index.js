@@ -95,7 +95,6 @@ app.post('/twitter', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
-            no_check_certificate: true,
         })
             .then(output => {
                 var thubDetails = [];
