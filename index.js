@@ -14,6 +14,8 @@ app.post('/instagram', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
         })
             .then(output => {
                 var thubDetails = [];
@@ -52,6 +54,8 @@ app.post('/youtube', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
         })
             .then(output => {
                 var thubDetails = [];
@@ -138,6 +142,8 @@ app.post('/dailymotion', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
         })
             .then(output => {
                 var thubDetails = [];
@@ -179,6 +185,8 @@ app.post('/facebook', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
         })
             .then(output => {
                 var thubDetails = [];
@@ -220,6 +228,8 @@ app.post('/vimeo', (req, res) => {
         var url = req.body.url;
         ytdl(url, {
             dumpSingleJson: true,
+            noCheckCertificates: true,
+            noWarnings: true,
         })
             .then(output => {
                 var thubDetails = [];
