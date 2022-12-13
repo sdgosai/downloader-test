@@ -32,14 +32,16 @@ app.post('/instagram', (req, res) => {
                         quality: reso
                     })
                 })
-                res.send({
+               return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     video: videoReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        res.send({ error: error })
+       return res.status(400).send({ error: error })
     }
 })
 
@@ -72,14 +74,16 @@ app.post('/youtube', (req, res) => {
                         // format: format
                     })
                 })
-                res.send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     videos: formatReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        res.send({ error: error })
+        return res.status(400).send({ error: error })
     }
 
 })
@@ -111,15 +115,17 @@ app.post('/twitter', (req, res) => {
                         extension: ext
                     })
                 })
-                res.send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     video: videoReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        console.log(error);
-        res.send({ error: error })
+        // console.log(error);
+        return res.status(400).send({ error: error })
     }
 })
 
@@ -150,15 +156,17 @@ app.post('/dailymotion', (req, res) => {
                         extension: ext
                     })
                 })
-                res.send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     video: videoReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        console.log(error);
-        res.send({ error: error })
+        // console.log(error);
+        return res.status(400).send({ error: error })
     }
 })
 
@@ -189,15 +197,17 @@ app.post('/facebook', (req, res) => {
                         extension: ext
                     })
                 })
-                res.send({
+                return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     video: videoReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        console.log(error);
-        res.send({ error: error })
+        // console.log(error);
+        return res.status(400).send({ error: error })
     }
 })
 
@@ -230,14 +240,16 @@ app.post('/vimeo', (req, res) => {
                         // format: format
                     })
                 })
-                res.send({
+               return res.status(200).send({
                     // data: output
                     thumbnails: thubDetails,
                     videos: formatReq
                 })
+            }).catch(e => {
+                return res.status(400).send({ error: e.message })
             })
     } catch (error) {
-        res.send({ error: error })
+       return res.status(400).send({ error: error })
     }
 })
 
